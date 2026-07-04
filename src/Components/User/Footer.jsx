@@ -1,8 +1,8 @@
-import type { ReactNode } from "react";
 import { Link } from "react-router-dom";
+import logoImage from "../../assets/Logo.png";
 
 /** Same as header — set your logo path (e.g. `/logo.png` in `public/`). */
-const LOGO_URL = "/logo.png";
+const LOGO_URL = logoImage;
 
 const linkClass =
   "text-[17px] text-[#4f4842] transition-colors hover:text-[#2f2a25] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7a6d60] rounded-sm";
@@ -10,7 +10,7 @@ const linkClass =
 const headingClass =
   "mb-3 text-[18px] font-semibold tracking-wide text-[#4a433d] uppercase";
 
-function FooterLink({ to, children }: { to: string; children: ReactNode }) {
+function FooterLink({ to, children }) {
   return (
     <Link to={to} className={linkClass}>
       {children}
@@ -20,7 +20,7 @@ function FooterLink({ to, children }: { to: string; children: ReactNode }) {
 
 const Footer = () => {
   return (
-    <footer className="mt-auto w-full bg-[#fcfaf7]">
+    <footer className="mt-auto w-full bg-[#F0E6DA]">
       <div className="mx-auto w-full max-w-[1400px] px-6 py-10 sm:px-10 lg:px-16 lg:py-12">
         <div className="grid grid-cols-1 gap-y-10 md:grid-cols-[1.3fr_1fr_1fr_1fr] md:gap-x-10">
           <div className="flex flex-col items-start">
@@ -28,11 +28,11 @@ const Footer = () => {
               to="/"
               className="flex items-center gap-2 rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7a6d60]"
             >
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-full bg-[#c05638] sm:h-11 sm:w-11">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-full sm:h-11 sm:w-11">
                 <img
                   src={LOGO_URL}
                   alt="CraftConnect"
-                  className="h-full w-full object-contain"
+                  className="h-full w-full scale-[1.9] object-cover"
                 />
               </div>
               <span className="font-serif text-[34px] font-bold tracking-tight text-[#2f2a25]">
@@ -45,10 +45,7 @@ const Footer = () => {
             </p>
           </div>
 
-          <nav
-            className="contents"
-            aria-label="Footer"
-          >
+          <nav className="contents" aria-label="Footer">
             <ul className="flex flex-col gap-2">
               <li className={headingClass}>Discover</li>
               <li>
